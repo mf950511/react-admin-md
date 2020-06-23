@@ -68,6 +68,12 @@ module.exports = {
       }
     ]
   },
+  resolve: {
+    extensions: ['.jsx', '.js', '.json'],
+    alias: {
+      "@": path.resolve(__dirname, 'src')
+    }
+  },
   plugins: [
     new MiniCssExtractPlugin({// 将css打包成单独的css文件
       filename: devMode ? '[name].css' : '[name].[hash:5].css',
