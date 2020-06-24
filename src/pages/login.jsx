@@ -1,14 +1,18 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { INCREMENT, DECREMENT } from '@/store/number/types'
+import { INCREMENT, DECREMENT } from "store/number/types"
 const Login = (props) => {
-  const { number, increment, decrement } = props
+  const { number, increment, decrement, history } = props
   console.log(123, number, increment, decrement)
+  const goHome = () => {
+    history.push('/home')
+  }
   return (
     <div>
       <button>我是数字{ number }</button>
       <button onClick={() => { increment() } }>点我加10</button>
       <button onClick={() => { decrement() } }>点我减10</button>
+      <button onClick={() => { goHome() } }>点我跳转</button>
     </div>
   )
 }

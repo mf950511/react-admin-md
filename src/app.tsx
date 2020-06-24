@@ -1,7 +1,7 @@
 import * as React from 'react'
 import './app.less'
-import ImgUrl from './image/img.png'
-import RouteConfig from '@/route/index'
+import RouteConfig from "router/index"
+import BaseUrl from './image/img.png'
 
 
 class App extends React.Component{

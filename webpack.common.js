@@ -8,7 +8,7 @@ console.log(devMode)
 module.exports = {
   entry: {
     app: './index.js',
-    test: './index.jsx'
+    test: './index.tsx'
   },
   module: {
     rules: [
@@ -62,16 +62,21 @@ module.exports = {
         ],
       },
       {
-        test: /\.(js)x?$/,
+        test: /\.(js|ts)x?$/,
         use: ['babel-loader'],
         exclude: /node-modules/
       }
     ]
   },
   resolve: {
-    extensions: ['.jsx', '.js', '.json'],
+    extensions: ['.tsx', '.ts', '.jsx', '.js', '.json'],
     alias: {
-      "@": path.resolve(__dirname, 'src')
+      "@": path.resolve(__dirname, 'src'),
+      "store": path.resolve(__dirname, 'src/store'),
+      "router": path.resolve(__dirname, 'src/router'),
+      "pages": path.resolve(__dirname, 'src/pages'),
+      "common": path.resolve(__dirname, 'src/common'),
+      "api": path.resolve(__dirname, 'src/api'),
     }
   },
   plugins: [
